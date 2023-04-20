@@ -22,8 +22,8 @@ def main():
     args = parser.parse_args()
 
     # Replace with your Gmail account email and password
-    sender_email = "daniel.butnar@gmail.com"
-    sender_password = "mlgooxieygudsxmr"
+    sender_email = "your_email@gmail.com"
+    sender_password = "your_email_password"
 
     send_email(sender_email, sender_password, args.recipient_email, args.subject, args.message)
 
