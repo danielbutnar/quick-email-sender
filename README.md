@@ -17,8 +17,10 @@ A simple command-line tool for sending emails using a Gmail account. This tool e
 
 Run the following command in your terminal or command prompt, replacing the recipient email, subject, and message with your desired values:
 
-```sh
-python send_email.py recipient@example.com "Your email subject" "Your email message"
+`sh
+`python send_email.py recipient@example.com "Your email subject" "Your email message`
+
+
 ## Automation
 
 ### Windows
@@ -26,8 +28,8 @@ python send_email.py recipient@example.com "Your email subject" "Your email mess
 1. Create a new text file named `email.cmd` in the same directory as `send_email.py`.
 2. Open `email.cmd` in a text editor and add the following line:
 
-@echo off
-python path\to\send_email.py %*
+`@echo off`
+`python path\to\send_email.py %*`
 
 Replace `path\to\` with the full path to the `send_email.py` file.
 
@@ -48,19 +50,19 @@ email recipient@example.com "Your email subject" "Your email message"
 
 1. Make `send_email.py` executable by running the following command:
 
-chmod +x /path/to/send_email.py
+`chmod +x /path/to/send_email.py`
 
 Replace `/path/to/` with the full path to the `send_email.py` file.
 
 2. Create a symbolic link to the script in a directory that's in your system's PATH, such as `/usr/local/bin/`:
 
-sudo ln -s /path/to/send_email.py /usr/local/bin/email
+`sudo ln -s /path/to/send_email.py /usr/local/bin/email`
 
 Replace `/path/to/` with the full path to the `send_email.py` file.
 
 Now you can use the email command from any directory in your terminal:
 
-email recipient@example.com "Your email subject" "Your email message"
+`email recipient@example.com "Your email subject" "Your email message"`
 ## Disclaimer
 
 Please ensure that you follow the guidelines and policies of the email service provider you use. This script is provided for educational purposes, and the author is not responsible for any misuse or violation of terms of service.
