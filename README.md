@@ -17,7 +17,7 @@ A simple command-line tool for sending emails using a Gmail account. This tool e
 
 Run the following command in your terminal or command prompt, replacing the recipient email, subject, and message with your desired values:
 
-`sh
+`sh`
 `python send_email.py recipient@example.com "Your email subject" "Your email message`
 
 
