@@ -73,4 +73,6 @@ email recipient@example.com "Your email subject" "Your email message"
 
 
 Disclaimer
+
+
 Please ensure that you follow the guidelines and policies of the email service provider you use. This script is provided for educational purposes, and the author is not responsible for any misuse or violation of terms of service.
