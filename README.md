@@ -63,6 +63,12 @@ To include an attachment, use the `-add` or `--attachment` option:
 
 python send_email.py recipient@example.com "Subject" "Message" -add "path/to/attachment"
 
+To include a more costume rewriting of the text, use the `-p` or `--person` option:
+
+python send_email.py recipient@example.com "Subject" "Message" -p StudentGPT
+
+now the program will rewrite the text from the perspective of a student.
+
 ## License
 
 This project is licensed under a Custom License. See the [LICENSE](LICENSE.txt) file for details.
