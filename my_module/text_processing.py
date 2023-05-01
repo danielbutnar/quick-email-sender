@@ -1,14 +1,15 @@
-from .common_imports import * 
-import logging 
+from .common_imports import *
+import logging
 from .utils import *
+
 class TextProcessing:
     """
     The TextProcessing class provides methods for processing and classifying text, such as detecting spam or generating formal text.
     """
-   
+
     def __init__(self, pickle_directory, openai_api_key):
         """
-        Initialize the natural language processing models, spam classifier and word features.
+        Initialize the natural language processing models, spam classifier, and word features.
         """
         self.pickle_directory = pickle_directory
         self.openai_api_key = openai_api_key
@@ -24,13 +25,7 @@ class TextProcessing:
         # Load the word features from the pickle file
         with open(Path(self.pickle_directory) / "word_features.pickle", "rb") as f:
             self.word_features = pickle.load(f)
-        # Load the spam classifier from the pickle file
-        with open(Path(self.pickle_directory) / "spam_classifier.pickle", "rb") as f:
-            self.classifier = pickle.load(f)
 
-        # Load the word features from the pickle file
-        with open(Path(self.pickle_directory) / "word_features.pickle", "rb") as f:
-            self.word_features = pickle.load(f)
 
     def find_features(self, message):
         """
@@ -49,14 +44,31 @@ class TextProcessing:
         return features
 
     def classify_message(self, message):
+        """
+        Classify a message as spam or not spam using a pre-trained classifier.
+
+        Args:
+            message (str): The message to be classified.
+
+        Returns:
+            str: The classification result, either "spam" or "not spam".
+        """
         tokenized_message = word_tokenize(message)
         features = self.find_features(tokenized_message)
         result = self.classifier.classify(features)
         return result
 
- 
 
     def is_spam_bert(self, email_content):
+        """
+        Classify an email as spam or not spam using a pre-trained BERT model.
+
+        Args:
+            email_content (str): The email content to be classified.
+
+        Returns:
+            bool: True if the email is classified as spam, False otherwise.
+        """
         model_name = "distilbert-base-uncased-finetuned-sst-2-english"
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForSequenceClassification.from_pretrained(model_name)
@@ -69,6 +81,8 @@ class TextProcessing:
             return True
         else:
             return False
+        
+
     def format_message(self, message, recipient_email, ai_person):
         """
         Formats an email message by detecting its language, making it more formal, and adding a greeting and closing.
@@ -153,6 +167,7 @@ class TextProcessing:
             formatted_email = response.choices[0].text.strip()
 
         return formatted_email
+    
 
     def is_spam_combined(self, email_content):
         """
@@ -168,6 +183,7 @@ class TextProcessing:
         naive_bayes_result = self.classify_message(email_content) == "spam"
 
         return  bert_result or naive_bayes_result
+    
 
     def generate_formal_text(self, text, nlp, language):
      """
