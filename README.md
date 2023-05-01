@@ -69,6 +69,11 @@ python send_email.py recipient@example.com "Subject" "Message" -p StudentGPT
 
 now the program will rewrite the text from the perspective of a student.
 
+To include a new service, use the `-s` or `--service` option:
+
+python send_email.py recipient@example.com "Subject" "Message" -s yahoo
+
+
 ## License
 
 This project is licensed under a Custom License. See the [LICENSE](LICENSE.txt) file for details.
