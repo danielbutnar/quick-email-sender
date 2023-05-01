@@ -1,5 +1,4 @@
 from .common_imports import *
-import logging
 from .utils import *
 class EmailHandler:
     """
