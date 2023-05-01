@@ -1,0 +1,24 @@
+Custom License
+
+Copyright (c) [2023] [Butnar Daniel]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, and merge, provided that the following conditions are met:
+
+Redistributions of the Software in source or binary form must retain the above copyright notice, this list of conditions, and the following disclaimer.
+
+The use of the Software for commercial purposes, including selling or sublicensing, is strictly prohibited without prior written consent from the copyright holder.
+
+Any modifications or derivatives of the Software must be clearly identified as such, and the original Software must not be misrepresented.
+
+The use of the Software for educational or research purposes is encouraged and does not require prior consent from the copyright holder, provided that the above conditions are met.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
