@@ -41,8 +41,12 @@ python -m stanza.download('ro')
 
 To use GPT-3 for advanced text generation, make sure you have an API key for the OpenAI API. You can obtain one by signing up for OpenAI's GPT-3 service.
 
-Once you have the API key, replace the placeholder in the script with your actual API key:
+Edit the .env file and enter your actual API key:
 openai.api_key = "your-api-key-here"
+
+ Update the `sender_email` and `sender_password` variables with your Gmail account email and password or app-specific password.
+ 
+ Update your pickle path with your actual path
 
 ## Usage
 
