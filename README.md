@@ -65,6 +65,6 @@ python send_email.py recipient@example.com "Subject" "Message" -add "path/to/att
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under a Custom License. See the [LICENSE](LICENSE.txt) file for details.
 
 
