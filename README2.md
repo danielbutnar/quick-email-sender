@@ -50,9 +50,8 @@ openai.api_key = "your-api-key-here"
 
 ## Usage
 
-1. Update the `sender_email` and `sender_password` variables in the script with your Gmail account email and password or app-specific password.
 
-2. Run the script with the required arguments:
+Run the script with the required arguments:
 
 python send_email.py recipient@example.com "Subject" "Message"
 
