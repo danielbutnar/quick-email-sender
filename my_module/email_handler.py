@@ -101,7 +101,6 @@ class EmailHandler:
         """
         # Get the SMTP server and port using the new function
         print(f"send_email called for {recipient_emails[0]}")
-        sender_password = os.getenv("SENDER_PASSWORD")
         smtp_server, smtp_port = self.get_smtp_settings(service.lower())
 
         server = smtplib.SMTP_SSL(smtp_server, smtp_port)
@@ -153,6 +152,24 @@ class EmailHandler:
         server.quit()
 
 def send_emails_concurrently(email_handler, sender_email, sender_password, recipient_emails, subject, message, attachment_path, ai_person, service, num_workers=10):
+    """
+    This function sends emails concurrently to multiple recipients using an EmailHandler instance, with optional attachment.
+
+    Args:
+    email_handler (EmailHandler): An instance of the EmailHandler class, responsible for handling and processing email-related tasks.
+    sender_email (str): The email address of the sender.
+    sender_password (str): The password for the sender's email account.
+    recipient_emails (list): A list of email addresses to send the email to.
+    subject (str): The subject of the email.
+    message (str): The content of the email.
+    attachment_path (str): The path to a file to be attached to the email (optional).
+    ai_person (str): The name of the AI persona used for communication (optional).
+    service (str): The email service provider to use for sending emails (e.g., 'gmail', 'yahoo', etc.).
+    num_workers (int, optional): The number of worker threads for sending emails concurrently. Default is 10.
+
+    This function divides the list of recipient email addresses into equal-sized chunks and sends emails to each chunk concurrently using a ThreadPoolExecutor. 
+    It prints any errors that occur during the email sending process.
+    """
     # Divide the recipient_emails list into equal-sized chunks
     print("send_emails_concurrently called")
     chunk_size = len(recipient_emails) // num_workers + (len(recipient_emails) % num_workers > 0)
