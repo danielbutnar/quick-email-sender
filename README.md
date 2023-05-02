@@ -12,7 +12,7 @@ Before running the script, make sure you have the following Python libraries ins
 - `openai`
 - `langdetect`
 
-Also, ensure you have the language models downloaded for `spacy` and `stanza`.\
+Also, ensure you have the language models downloaded for `spacy` and `stanza`.
 
 ## Contribution
 
