@@ -23,11 +23,8 @@ We would love for you to contribute to this project! Here's how you can get star
 3. When you're ready, create a pull request so we can review your changes and merge them into the main branch.
 4. Before you can start making changes, please ensure that you have the following prerequisites installed on your computer:
 
-spacy
-stanza
-conceptnet_lite
-openai
-langdetect
+
+
 Also, make sure to download the necessary language models for spacy and stanza. If you need any help with the setup, don't hesitate to reach out to us!
 
 
