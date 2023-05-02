@@ -12,7 +12,29 @@ Before running the script, make sure you have the following Python libraries ins
 - `openai`
 - `langdetect`
 
-Also, ensure you have the language models downloaded for `spacy` and `stanza`.
+Also, ensure you have the language models downloaded for `spacy` and `stanza`.\
+
+## Contribution
+
+We would love for you to contribute to this project! Here's how you can get started:
+
+1. Fork this repository to your own GitHub account.
+2. Make your desired changes on a separate branch.
+3. When you're ready, create a pull request so we can review your changes and merge them into the main branch.
+4. Before you can start making changes, please ensure that you have the following prerequisites installed on your computer:
+
+spacy
+stanza
+conceptnet_lite
+openai
+langdetect
+Also, make sure to download the necessary language models for spacy and stanza. If you need any help with the setup, don't hesitate to reach out to us!
+
+
+
+
+
+
 
 ## Installation
 
