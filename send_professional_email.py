@@ -51,6 +51,7 @@ def main():
     parser.add_argument("-add", "--attachment", help="Path to the file to attach to the email.", default=None)
     parser.add_argument("-p", "--person", dest="ai_person", help="The type of AI person and context for rewriting the text (e.g., 'Employer-GPT').", default="Employer-GPT")
     parser.add_argument("-s", "--service", dest="service", help="The email service to use for sending the email (e.g., 'gmail', 'yahoo', 'outlook', 'hotmail', 'live', 'exchange', 'aol', 'zoho', 'mail', 'gmx', 'protonmail', 'icloud').", default="gmail")
+    parser.add_argument("-blank", "--blank", dest="blank", help="Send email without any formatting or text generation.", action="store_true", default=False)
     args = parser.parse_args()
 
     
@@ -59,7 +60,8 @@ def main():
     
     try:
         print("main: calling send_emails_concurrently")
-        send_emails_concurrently(email_handler, sender_email, sender_password, args.recipient_email, args.subject, args.message, args.attachment, args.ai_person, args.service)
+        send_emails_concurrently(email_handler, sender_email, sender_password, args.recipient_email, args.subject, args.message, args.attachment, args.ai_person, args.service, args.blank)
+
     except Exception as e:
         logging.critical(f"Error sending email: {e}")
 
@@ -74,6 +76,8 @@ if __name__ == "__main__":
     parser.add_argument("-p", "--person", dest="ai_person", help="The type of AI person and context for rewriting the text (e.g., 'Employer-GPT').", default="Employer-GPT")
     parser.add_argument("-s", "--service", dest="service", help="The email service to use for sending the email (e.g., 'gmail', 'yahoo', 'outlook', 'hotmail', 'live', 'exchange', 'aol', 'zoho', 'mail', 'gmx', 'protonmail', 'icloud').", default="gmail")
     parser.add_argument("-help", action="store_true", help="Show this help message and exit.")
+    parser.add_argument("-blank", "--blank", dest="blank", help="Send email without any formatting or text generation.", action="store_true", default=False)
+
     args = parser.parse_args()
 
     if args.help:
