@@ -81,7 +81,7 @@ class EmailHandler:
         else:
             return "unknown"
 
-    def send_email(self, sender_email, sender_password, recipient_emails, subject, message, attachment_path, ai_person, service):
+    def send_email(self, sender_email, sender_password, recipient_emails, subject, message, attachment_path, ai_person, service, blank):
         """
         Sends an email to multiple recipients with an optional attachment.
 
@@ -115,7 +115,11 @@ class EmailHandler:
             return
 
         for recipient_email in recipient_emails:
-            formatted_message = self.text_processing.format_message(message, recipient_email, ai_person)
+            if not blank:
+                 formatted_message = self.text_processing.format_message(message, recipient_email, ai_person)
+            else:
+                formatted_message = message
+
         
 
             if self.text_processing.is_spam_combined(formatted_message):
@@ -150,7 +154,7 @@ class EmailHandler:
 
         server.quit()
 
-def send_emails_concurrently(email_handler, sender_email, sender_password, recipient_emails, subject, message, attachment_path, ai_person, service, num_workers=10):
+def send_emails_concurrently(email_handler, sender_email, sender_password, recipient_emails, subject, message, attachment_path, ai_person, service, blank=False, num_workers=10):
     """
     This function sends emails concurrently to multiple recipients using an EmailHandler instance, with optional attachment.
 
@@ -175,7 +179,7 @@ def send_emails_concurrently(email_handler, sender_email, sender_password, recip
     email_chunks = [recipient_emails[i:i + chunk_size] for i in range(0, len(recipient_emails), chunk_size)]
 
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
-        futures = [executor.submit(email_handler.send_email, sender_email, sender_password, email_chunk, subject, message, attachment_path, ai_person, service) for email_chunk in email_chunks]
+        futures = [executor.submit(email_handler.send_email, sender_email, sender_password, email_chunk, subject, message, attachment_path, ai_person, service, blank) for email_chunk in email_chunks]
         for future in futures:
             try:
                 future.result()
