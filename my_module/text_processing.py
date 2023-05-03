@@ -1,6 +1,7 @@
 from .common_imports import *
-import logging
 from .utils import *
+
+
 
 class TextProcessing:
     """
@@ -15,8 +16,17 @@ class TextProcessing:
         self.openai_api_key = openai_api_key
         self.nlp_en = spacy.load("en_core_web_sm")
         self.nlp_de = spacy.load("de_core_news_sm")
+        self.nlp_fr = spacy.load("fr_core_news_sm")
+        self.nlp_es = spacy.load("es_core_news_sm")
+        self.nlp_it = spacy.load("it_core_news_sm")
+        self.nlp_nl = spacy.load("nl_core_news_sm")
+        self.nlp_pt = spacy.load("pt_core_news_sm")
+        self.nlp_ru = spacy.load("ru_core_news_sm")
+        self.nlp_sv = spacy.load("sv_core_news_sm")
+        self.nlp_zh = spacy.load("zh_core_web_sm")
         stanza.download('ro')
         self.stanza_nlp_ro = stanza.Pipeline('ro')
+        self.templates = self.load_templates("C:/Users/user/Documents/daniel/VirtualStudio/my_module/templates.json")
 
         # Load the spam classifier from the pickle file
         with open(Path(self.pickle_directory) / "spam_classifier.pickle", "rb") as f:
@@ -26,6 +36,7 @@ class TextProcessing:
         with open(Path(self.pickle_directory) / "word_features.pickle", "rb") as f:
             self.word_features = pickle.load(f)
 
+         
 
     def find_features(self, message):
         """
@@ -46,10 +57,8 @@ class TextProcessing:
     def classify_message(self, message):
         """
         Classify a message as spam or not spam using a pre-trained classifier.
-
         Args:
             message (str): The message to be classified.
-
         Returns:
             str: The classification result, either "spam" or "not spam".
         """
@@ -62,10 +71,8 @@ class TextProcessing:
     def is_spam_bert(self, email_content):
         """
         Classify an email as spam or not spam using a pre-trained BERT model.
-
         Args:
             email_content (str): The email content to be classified.
-
         Returns:
             bool: True if the email is classified as spam, False otherwise.
         """
@@ -82,15 +89,17 @@ class TextProcessing:
         else:
             return False
         
+    def load_templates(self, filename):
+        with open(filename, "r", encoding="utf-8") as file:
+            templates = json.load(file)
+        return templates
 
     def format_message(self, message, recipient_email, ai_person):
         """
         Formats an email message by detecting its language, making it more formal, and adding a greeting and closing.
-
         Args:
             message (str): The email message to be formatted.
             recipient_email (str): The recipient's email address.
-
         Returns:
             str: The formatted email message with a greeting, more formal content, and a closing.
         """
@@ -107,15 +116,31 @@ class TextProcessing:
         except:
             language = input("Language not recognized. Please enter the language code (e.g., 'en' for English): ")
 
-        supported_languages = ['en', 'de', 'ro', 'fr', 'es', 'it', 'nl', 'pt', 'ru', 'sv', 'tr', 'zh']
-        if language in supported_languages:
-            if language == "en":
-                nlp = self.nlp_en
-            elif language == "de":
-                nlp = self.nlp_de
-            elif language == "ro":
-                nlp = self.stanza_nlp_ro
+        supported_languages = [
+    "af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "zh",
+    "co", "hr", "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr", "gl", "ka",
+    "de", "el", "gu", "ht", "ha", "haw", "iw", "hi", "hu", "is", "ig", "id", "ga",
+    "it", "ja", "jw", "kn", "kk", "km", "ko", "ku", "ky", "lo", "la", "lv", "lt",
+    "lb", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "ne", "no", "pa", "fa",
+    "pl", "pt", "pa_in", "ro", "ru", "sm", "gd", "sr", "st", "sn", "sd", "si",
+    "sk", "sl", "so", "es", "sw", "sv", "tg", "ta", "te", "th", "tr", "uk", "ur",
+    "uz", "vi", "cy", "xh", "yi", "zu"
+]
 
+        if language in supported_languages:
+            nlp = {
+                "en": self.nlp_en,
+                "de": self.nlp_de,
+                "ro": self.stanza_nlp_ro,
+                "fr": self.nlp_fr,
+                "es": self.nlp_es,
+                "it": self.nlp_it,
+                "nl": self.nlp_nl,
+                "pt": self.nlp_pt,
+                "ru": self.nlp_ru,
+                "sv": self.nlp_sv,
+                "zh": self.nlp_zh,
+            }.get(language)
             # Extract the recipient's name from the email address
             name_match = re.match(r'([a-zA-Z]+)\.?([a-zA-Z]*)@', recipient_email)
             if name_match:
@@ -125,31 +150,21 @@ class TextProcessing:
             else:
                 recipient_name = ""
 
-            # Professional email templates
-            templates = {
-                "en": {
-                    "greeting": f"Dear {recipient_name},",
-                    "closing": "Best regards,\n\nDaniel"
-                },
-                "de": {
-                    "greeting": f"Sehr geehrte{'' if recipient_name else 'r'} {recipient_name},",
-                    "closing": "Mit freundlichen Grüßen,\n\nDaniel"
-                },
-                "ro": {
-                    "greeting": f"Stimate {recipient_name},",
-                    "closing": "Cu stimă,\n\nDaniel"
-                }
-            }
+            
 
-            template = templates.get(language, templates["en"])
+            template = self.templates.get(language, self.templates["en"])
+
 
             # Generate more formal text using GPT-3
             formal_message = self.generate_formal_text_gpt3(message, language, ai_person, openai_engine)
 
             # Insert the message into the professional template
         
-            formatted_email = f"{template['greeting']}\n\n{formal_message}\n\n{template['closing']}"
+            sender_name = os.getenv("SENDER_NAME")
+            if not sender_name:
+                raise ValueError("SENDER_NAME environment variable is missing")
 
+            formatted_email = f"{template['greeting'].format(recipient_name=recipient_name)}\n\n{formal_message}\n\n{template['closing'].format(SENDER_NAME=sender_name)}"
 
         else:
             # For unsupported languages, use GPT-3 to generate the entire email, including greeting and closing
@@ -172,10 +187,8 @@ class TextProcessing:
     def is_spam_combined(self, email_content):
         """
         Checks if the given email content might be flagged as spam using both SpamAssassin and a pre-trained BERT model.
-
         Args:
             email_content (str): The email content to be checked for spam.
-
         Returns:
             bool: True if the email content might be flagged as spam, False otherwise.
         """
@@ -193,7 +206,6 @@ class TextProcessing:
         text (str): The input text to be made more formal.
         nlp (spacy.lang or stanza.models): The language model for processing the input text.
         language (str): The language code of the input text (e.g., "en" for English).
-
      Returns:
         str: The more formal version of the input text.
      """
@@ -242,21 +254,22 @@ class TextProcessing:
             language (str): The language code of the input text (e.g., "en" for English).
             ai_person (str): The context of the AI persona (e.g., "assistant").
             engine (str): The GPT engine to use for generating text.
-
         Returns:
             str: The more formal version of the input text.
         """
         openai.api_key = self.openai_api_key
-
         language_name = {
             "en": "English",
             "de": "German",
             "ro": "Romanian"
         }.get(language, "English")
         print("Detected language:", language)
+       
         prompt = (
-    f"Please rewrite the following text in {language}, ensuring the use of a formal and sophisticated corporate style appropriate for a professional email, excluding greetings."
-    " Pay close attention to the following:"
+    f"Please rewrite the following text in {language}, ensuring the use of a formal and sophisticated corporate style appropriate for a professional email. Include an introductory sentence for the email body, such as I hope this email finds you well but  make it longer and more detailed. "
+    " Also, include a  thank you note at the end of the message, but make sure not to duplicate any part of the thank you message. In that thank you note, any form of greeding must be avoided, like 'cu stima' or 'cu respenct' in romanian or any other language. "
+    "\n\nExclude greetings, introduction, and closing parts as they are already included in the template."
+    "\n\nFor the main message, pay close attention to the following:"
     "\n- Use language-specific style elements, phrases, or words common in corporate communications."
     "\n- Include idiomatic expressions or natural-sounding phrases in the target language."
     "\n- Maintain the desired level of formality and avoid informal language."
@@ -265,8 +278,10 @@ class TextProcessing:
     "\n\nIf there are any ambiguous words or phrases, please consider the context and clarify the intended meaning in the rewritten text."
     " Additionally, ensure the output is grammatically accurate with correct spelling and punctuation."
     " If necessary, divide the text into smaller segments to focus on specific parts and improve the output quality."
+    " Make sure that the hole email is generated in {language}"
     f"\n\nOriginal text:\n{text}\n\nFormal version:"
 )
+
 
 
         response = openai.Completion.create(
