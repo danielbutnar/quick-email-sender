@@ -52,6 +52,16 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 python -m spacy download de_core_news_sm
 python -m stanza.download('ro')
+python -m spacy download fr_core_news_sm
+python -m spacy download es_core_news_sm
+python -m spacy download it_core_news_sm
+python -m spacy download nl_core_news_sm
+python -m spacy download pt_core_news_sm
+python -m spacy download ru_core_news_sm
+python -m spacy download sv_core_news_sm
+python -m spacy download tr_core_news_sm
+python -m spacy download zh_core_web_sm
+
 5. Set up OpenAI API Key:
 
 To use GPT-3 for advanced text generation, make sure you have an API key for the OpenAI API. You can obtain one by signing up for OpenAI's GPT-3 service.
