@@ -35,6 +35,14 @@ from email import encoders
 from pathlib import Path
 import stanza
 import spacy
+from spacy.lang.fr.examples import sentences
+from spacy.lang.es.examples import sentences
+from spacy.lang.it.examples import sentences
+from spacy.lang.nl.examples import sentences
+from spacy.lang.pt.examples import sentences
+from spacy.lang.ru.examples import sentences
+from spacy.lang.sv.examples import sentences
+from spacy.lang.zh.examples import sentences
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 import openai
 import nltk
@@ -44,4 +52,5 @@ import conceptnet_lite
 from dotenv import load_dotenv
 import pickle
 import logging
+import json
 
