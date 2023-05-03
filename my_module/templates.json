@@ -1,0 +1,386 @@
+{
+    "af": {
+      "greeting": "Geagte {recipient_name},",
+      "closing": "Vriendelike groete,\n\n{SENDER_NAME}"
+    },
+    "sq": {
+      "greeting": "I nderuar {recipient_name},",
+      "closing": "Me respekt,\n\n{SENDER_NAME}"
+    },
+    "ar": {
+      "greeting": "السيد/ة {recipient_name},",
+      "closing": "مع خالص التحية,\n\n{SENDER_NAME}"
+    },
+    "hy": {
+      "greeting": "Հարգելի {recipient_name},",
+      "closing": "Հարգանքներով,\n\n{SENDER_NAME}"
+    },
+    "az": {
+      "greeting": "Hörmətli {recipient_name},",
+      "closing": "Hörmətlə,\n\n{SENDER_NAME}"
+    },
+    "eu": {
+      "greeting": "Apreciatutako {recipient_name},",
+      "closing": "Agur,\n\n{SENDER_NAME}"
+    },
+    "be": {
+      "greeting": "Шаноўны {recipient_name},",
+      "closing": "З павагай,\n\n{SENDER_NAME}"
+    },
+    "bn": {
+      "greeting": "প্রিয় {recipient_name},",
+      "closing": "আপনার,\n\n{SENDER_NAME}"
+    },
+    "bs": {
+      "greeting": "Poštovani {recipient_name},",
+      "closing": "Srdačan pozdrav,\n\n{SENDER_NAME}"
+    },
+    "bg": {
+      "greeting": "Уважаеми {recipient_name},",
+      "closing": "С уважение,\n\n{SENDER_NAME}"
+    },
+    "ca": {
+      "greeting": "Benvolgut/da {recipient_name},",
+      "closing": "Cordialment,\n\n{SENDER_NAME}"
+    },
+    "ceb": {
+      "greeting": "Mahal nga {recipient_name},",
+      "closing": "Sa dili pa,\n\n{SENDER_NAME}"
+    },
+    "zh": {
+      "greeting": "尊敬的 {recipient_name},",
+      "closing": "顺祝商祺,\n\n{SENDER_NAME}"
+    },
+    "co": {
+      "greeting": "Caru {recipient_name},",
+      "closing": "Cun rispettu,\n\n{SENDER_NAME}"
+    },
+    "hr": {
+      "greeting": "Poštovani {recipient_name},",
+      "closing": "Srdačan pozdrav,\n\n{SENDER_NAME}"
+    },
+    "cs": {
+      "greeting": "Vážený/á {recipient_name},",
+      "closing": "S pozdravem,\n\n{SENDER_NAME}"
+    },
+    "da": {
+      "greeting": "Kære {recipient_name},",
+      "closing": "Venlig hilsen,\n\n{SENDER_NAME}"
+    },
+    "nl": {
+      "greeting": "Geachte {recipient_name},",
+      "closing": "Met vriendelijke groet,\n\n{SENDER_NAME}"
+      },
+      "en": {
+      "greeting": "Dear {recipient_name},",
+      "closing": "Sincerely,\n\n{SENDER_NAME}"
+      },
+      "eo": {
+      "greeting": "Kara {recipient_name},",
+      "closing": "Amike,\n\n{SENDER_NAME}"
+      },
+      "et": {
+      "greeting": "Lugupeetud {recipient_name},",
+      "closing": "Lugupidamisega,\n\n{SENDER_NAME}"
+      },
+      "tl": {
+      "greeting": "Minamahal na {recipient_name},",
+      "closing": "Lubos na gumagalang,\n\n{SENDER_NAME}"
+      },
+      "fi": {
+      "greeting": "Hyvä {recipient_name},",
+      "closing": "Ystävällisin terveisin,\n\n{SENDER_NAME}"
+      },
+      "fr": {
+      "greeting": "Cher/Chère {recipient_name},",
+      "closing": "Cordialement,\n\n{SENDER_NAME}"
+      },
+      "gl": {
+      "greeting": "Estimado/a {recipient_name},",
+      "closing": "Un cordial saúdo,\n\n{SENDER_NAME}"
+      },
+      "ka": {
+      "greeting": "პატივისცემით {recipient_name},",
+      "closing": "პატივით,\n\n{SENDER_NAME}"
+      },
+      "de": {
+      "greeting": "Sehr geehrte/r {recipient_name},",
+      "closing": "Mit freundlichen Grüßen,\n\n{SENDER_NAME}"
+      },
+      "el": {
+      "greeting": "Αγαπητέ/ή {recipient_name},",
+      "closing": "Με εκτίμηση,\n\n{SENDER_NAME}"
+      },
+      "gu": {
+      "greeting": "પ્રિય {recipient_name},",
+      "closing": "ભવિષ્યમાં દ્રશ્ય અભિવાદન,\n\n{SENDER_NAME}"
+      },
+      "ht": {
+      "greeting": "Chè {recipient_name},",
+      "closing": "Kòdialman,\n\n{SENDER_NAME}"
+      },
+      "ha": {
+      "greeting": "Masoyi {recipient_name},",
+      "closing": "Da fatan alheri,\n\n{SENDER_NAME}"
+      },
+      "haw": {
+      "greeting": "Aloha mai {recipient_name},",
+      "closing": "A hui hou,\n\n{SENDER_NAME}"
+      },
+      "iw": {
+      "greeting": "יקר/ה {recipient_name},",
+      "closing": "בברכה,\n\n{SENDER_NAME}"
+      },
+      "hi": {
+      "greeting": "प्रिय {recipient_name},",
+      "closing": "भविष्य में दर्शन करें,\n\n{SENDER_NAME}"
+      },"hu": {
+        "greeting": "Kedves {recipient_name},",
+        "closing": "Üdvözlettel,\n\n{SENDER_NAME}"
+        },
+        "is": {
+        "greeting": "Kæri {recipient_name},",
+        "closing": "Með kveðju,\n\n{SENDER_NAME}"
+        },
+        "ig": {
+        "greeting": "Ndị ọchịchị {recipient_name},",
+        "closing": "N'eketara mma,\n\n{SENDER_NAME}"
+        },
+        "id": {
+        "greeting": "Kepada {recipient_name},",
+        "closing": "Hormat saya,\n\n{SENDER_NAME}"
+        },
+        "ga": {
+        "greeting": "A {recipient_name} chara,",
+        "closing": "Le meas,\n\n{SENDER_NAME}"
+        },
+        "it": {
+        "greeting": "Caro/a {recipient_name},",
+        "closing": "Cordiali saluti,\n\n{SENDER_NAME}"
+        },
+        "ja": {
+        "greeting": "{recipient_name} 様,",
+        "closing": "敬具,\n\n{SENDER_NAME}"
+        },
+        "jw": {
+        "greeting": "Pak {recipient_name},",
+        "closing": "Salam hangat,\n\n{SENDER_NAME}"
+        },
+        "kn": {
+        "greeting": "ಪ್ರಿಯ {recipient_name},",
+        "closing": "ಭವಿಷ್ಯದ ದರ್ಶನ,\n\n{SENDER_NAME}"
+        },
+        "kk": {
+        "greeting": "Құрметті {recipient_name},",
+        "closing": "Құрметпен,\n\n{SENDER_NAME}"
+        },
+        "km": {
+        "greeting": "ជូនចំពោះ {recipient_name},",
+        "closing": "ដោយគោរព,\n\n{SENDER_NAME}"
+        },
+        "ko": {
+        "greeting": "{recipient_name}님께,",
+        "closing": "감사합니다,\n\n{SENDER_NAME}"
+        },
+        "ku": {
+        "greeting": "Bi hurmetê re {recipient_name},",
+        "closing": "Bi rêzdarî,\n\n{SENDER_NAME}"
+        },
+        "ky": {
+        "greeting": "Үнөттүү {recipient_name},",
+        "closing": "Жакшы калың,\n\n{SENDER_NAME}"
+        },
+        "lo": {
+        "greeting": "ສະບາຍດີ {recipient_name},",
+        "closing": "ສະບາຍດີ,\n\n{SENDER_NAME}"
+        },
+        "la": {
+        "greeting": "Salve {recipient_name},",
+        "closing": "Vale,\n\n{SENDER_NAME}"
+        },
+        "lv": {
+        "greeting": "Godājamais {recipient_name},",
+        "closing": "Ar cieņu,\n\n{SENDER_NAME}"
+        },
+        "lt": {
+        "greeting": "Gerbiamas {recipient_name},",
+        "closing": "Pagarbiai,\n\n{SENDER_NAME}"
+        },
+        "lb": {
+        "greeting": "Léif {recipient_name},",
+        "closing": "Mat beschte Gréiss,\n\n{SENDER_NAME}"
+        },
+        "mk": {
+        "greeting": "Почитуван {recipient_name},",
+        "closing": "Со почит,\n\n{SENDER_NAME}"
+        },
+        "mg": {
+        "greeting": "Mankasitraka {recipient_name},",
+        "closing": "Misaotra,\n\n{SENDER_NAME}"
+        },
+        "ms": {
+        "greeting": "Kepada {recipient_name},",
+        "closing": "Yang benar,\n\n{SENDER_NAME}"
+        },
+        "ml": {
+        "greeting": "പ്രിയ {recipient_name},",
+        "closing": "നന്ദി,\n\n{SENDER_NAME}"
+        },
+        "mt": {
+        "greeting": "Għażiż/ża {recipient_name},",
+        "closing": "Tislijiet,\n\n{SENDER_NAME}"
+        },
+        "mi": {
+        "greeting": "Tēnā koe {recipient_name},",
+        "closing": "Nāku noa, nā,\n\n{SENDER_NAME}"
+        },
+        "mr": {
+        "greeting": "प्रिय {recipient_name},",
+        "closing": "भविष्याचे दर्शन,\n\n{SENDER_NAME}"
+        },
+        "mn": {
+        "greeting": "Тахайлбал {recipient_name},",
+        "closing": "Хүндэтгэсэн,\n\n{SENDER_NAME}"
+        },
+        "ne": {
+        "greeting": "प्रिय {recipient_name},",
+        "closing": "भविष्य मा दर्शन,\n\n{SENDER_NAME}"
+        },
+        "no": {
+        "greeting": "Kjære {recipient_name},",
+        "closing": "Med vennlig hilsen,\n\n{SENDER_NAME}"
+        },
+        "pa": {
+        "greeting": "ਪਿਆਰੇ {recipient_name},",
+        "closing": "ਭਵਿੱਖ ਵਿੱਚ ਦਿੱਦਰ,\n\n{SENDER_NAME}"
+        },
+        "fa": {
+        "greeting": "با سلام {recipient_name},",
+        "closing": "با احترام,\n\n{SENDER_NAME}"
+        },
+        "pl": {
+        "greeting": "Szanowny {recipient_name},",
+        "closing": "Z poważaniem,\n\n{SENDER_NAME}"
+        },
+        "pt": {
+        "greeting": "Caro/a {recipient_name},",
+        "closing": "Atenciosamente,\n\n{SENDER_NAME}"
+        },
+        "pa_in": {
+        "greeting": "ਪਿਆਰੇ {recipient_name},",
+        "closing": "ਭਵਿੱਖ ਵਿੱਚ ਦਿੱਦਰ,\n\n{SENDER_NAME}"
+        },
+        "ro": {
+        "greeting": "Dragă {recipient_name},",
+        "closing": "Cu stimă,\n\n{SENDER_NAME}"
+        },
+        "ru": {
+        "greeting": "Уважаемый/ая {recipient_name},",
+        "closing": "С уважением,\n\n{SENDER_NAME}"
+        },
+        "sm": {
+        "greeting": "Talofa {recipient_name},",
+        "closing": "Faafetai lava,\n\n{SENDER_NAME}"
+        },
+        "gd": {
+        "greeting": "A charaid {recipient_name},",
+        "closing": "Le dùrachdan,\n\n{SENDER_NAME}"
+        },
+        "sr": {
+        "greeting": "Поштовани {recipient_name},",
+        "closing": "Срдачан поздрав,\n\n{SENDER_NAME}"
+        },
+        "st": {
+        "greeting": "Thobela {recipient_name},",
+        "closing": "Le ka moso,\n\n{SENDER_NAME}"
+        },
+        "sn": {
+        "greeting": "Mauya {recipient_name},",
+        "closing": "Tatenda,\n\n{SENDER_NAME}"
+        },
+        "sd": {
+        "greeting": "پياري {recipient_name},",
+        "closing": "پنڌن لاءِ آزمون،\n\n{SENDER_NAME}"
+        },
+        "si": {
+        "greeting": "ප්‍රිය {recipient_name},",
+        "closing": "ස්තුතියි,\n\n{SENDER_NAME}"
+        },
+        "sk": {
+        "greeting": "Vážený/á {recipient_name},",
+        "closing": "S pozdravom,\n\n{SENDER_NAME}"
+        },
+        "sl": {
+        "greeting": "Spoštovani {recipient_name},",
+        "closing": "Lep pozdrav,\n\n{SENDER_NAME}"
+        },
+        "so": {
+        "greeting": "Walaal {recipient_name},",
+        "closing": "Mahadsanid,\n\n{SENDER_NAME}"
+        },
+        "es": {
+        "greeting": "Estimado/a {recipient_name},",
+        "closing": "Atentamente,\n\n{SENDER_NAME}"
+        },
+        "sw": {
+        "greeting": "Mpendwa {recipient_name},",
+        "closing": "Kwa heshima,\n\n{SENDER_NAME}"
+        },
+        "sv": {
+        "greeting": "Bäste {recipient_name},",
+        "closing": "Vänliga hälsningar,\n\n{SENDER_NAME}"
+        },
+        "tg": {
+        "greeting": "Ҳурматбахш {recipient_name},",
+        "closing": "Бо иқбол,\n\n{SENDER_NAME}"
+        },
+        "ta": {
+        "greeting": "அன்புடன் {recipient_name},",
+        "closing": "இனிய வாழ்த்துக்கள்,\n\n{SENDER_NAME}"
+        },
+        "te": {
+        "greeting": "ప్రియ {recipient_name},",
+        "closing": "ధన్యవాదాలు,\n\n{SENDER_NAME}"
+        },
+        "th": {
+        "greeting": "ถึงคุณ {recipient_name},",
+        "closing": "ขอแสดงความนับถือ,\n\n{SENDER_NAME}"
+        },
+        "tr": {
+        "greeting": "Sayın {recipient_name},",
+        "closing": "Saygılarımla,\n\n{SENDER_NAME}"
+        },
+        "uk": {
+        "greeting": "Шановний/на {recipient_name},",
+        "closing": "З повагою,\n\n{SENDER_NAME}"
+        },
+        "ur": {
+        "greeting": "عزیز {recipient_name},",
+        "closing": "خدا حافظ,\n\n{SENDER_NAME}"
+        },
+        "uz": {
+        "greeting": "Hurmatli {recipient_name},",
+        "closing": "Hurmat bilan,\n\n{SENDER_NAME}"
+        },
+        "vi": {
+        "greeting": "Kính gửi {recipient_name},",
+        "closing": "Trân trọng,\n\n{SENDER_NAME}"
+        },
+        "cy": {
+        "greeting": "Annwyl {recipient_name},",
+        "closing": "Yn gywir,\n\n{SENDER_NAME}"
+        },
+        "xh": {
+        "greeting": "Mhlekazi {recipient_name},",
+        "closing": "Nangomso,\n\n{SENDER_NAME}"
+        },
+        "yi": {
+        "greeting": "ליבע {recipient_name},",
+        "closing": "מיט בעסטע גריס,\n\n{SENDER_NAME}"
+        },
+        "zu": {
+        "greeting": "Ngiyakuthanda {recipient_name},",
+        "closing": "Ngikukhumbula,\n\n{SENDER_NAME}"
+        }
+        }
+  
